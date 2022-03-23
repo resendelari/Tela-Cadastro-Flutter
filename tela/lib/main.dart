@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:tela/cadastro.dart';
+import 'package:provider/provider.dart';
+import 'package:tela/provider/disciplinas.dart';
+import 'package:tela/routes/app_routes.dart';
+import 'package:tela/views/cadastro.dart';
+import 'package:tela/views/disciplina_form.dart';
+//import 'package:tela/views/cadastro.dart';
+import 'package:tela/views/disciplinas_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +17,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return ChangeNotifierProvider(
+      create: (cxt) => Disciplinas(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        routes: {
+          AppRoutes.HOME: (_) => Cadastro(),
+          AppRoutes.DISCIPLINA_LIST: (_) => DisciplinasList(),
+          AppRoutes.DISCIPLINA_FORM: (_) => DisciplinaForm()
+        },
       ),
-      home: const Cadastro(),
     );
   }
 }

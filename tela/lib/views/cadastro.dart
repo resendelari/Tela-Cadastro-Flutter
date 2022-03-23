@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tela/routes/app_routes.dart';
+import 'disciplinas_list.dart';
 
 class Cadastro extends StatefulWidget {
   const Cadastro({Key? key}) : super(key: key);
@@ -37,7 +39,27 @@ class _CadastroState extends State<Cadastro> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 47, 61, 66),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 198, 208, 212),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        title: const Text('teste'),
+        //elevation: 50,
+        leadingWidth: 180,
+        leading: SizedBox(
+            child: ElevatedButton(
+                onPressed: () => {
+                      //volta para outra tela
+                    },
+                child: const Text(
+                  'Voltar para Login',
+                ),
+                // ignore: prefer_const_constructors
+                style: ElevatedButton.styleFrom(
+                    maximumSize: const Size(100, 40),
+                    textStyle: const TextStyle(fontSize: 15),
+                    primary: const Color.fromARGB(255, 47, 61, 66),
+                    onPrimary: const Color.fromARGB(255, 255, 255, 255),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    )))),
       ),
       body: Row(
         children: [
@@ -163,11 +185,12 @@ class _CadastroState extends State<Cadastro> {
                             Padding(
                               padding: const EdgeInsets.fromLTRB(10, 5, 0, 0),
                               child: DropdownButton<String>(
+                                isExpanded: true,
                                 hint: const Text(
                                   'Curso',
                                   style: TextStyle(
-                                    color: Colors.white70,
-                                  ),
+                                      //color: Colors.white70,
+                                      ),
                                 ),
                                 value: value,
                                 items: items.map(buildMenuItem).toList(),
@@ -238,70 +261,45 @@ class _CadastroState extends State<Cadastro> {
                                 },
                               ),
                             ),
-                            Row(
-                              children: [
-                                ButtonTheme(
-                                  child: Center(
-                                    child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          170, 20, 10, 0),
-                                      child: ElevatedButton(
-                                          onPressed: () => {
-                                                //volta para outra tela
-                                              },
-                                          child: const Text(
-                                            '← Login',
-                                            style: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 198, 208, 212),
-                                              fontSize: 15,
-                                            ),
-                                          ),
-                                          // ignore: prefer_const_constructors
-                                          style: TextButton.styleFrom(
-                                              backgroundColor:
-                                                  const Color.fromARGB(
-                                                      255, 47, 61, 66),
-                                              alignment: Alignment.center)),
+
+                            ButtonTheme(
+                              child: Center(
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10, 20, 10, 0),
+                                  child: ElevatedButton(
+                                    onPressed: () => {
+                                      if (_formkey.currentState!.validate())
+                                        {
+                                          Navigator.of(context).pushNamed(
+                                              AppRoutes.DISCIPLINA_LIST)
+                                        }
+                                      else
+                                        {
+                                          //outro
+                                        }
+                                    },
+                                    child: const Text(
+                                      'Criar Conta',
+                                      style: TextStyle(
+                                        color: Color.fromARGB(255, 47, 61, 66),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
+                                    // ignore: prefer_const_constructors
+                                    style: ElevatedButton.styleFrom(
+                                      primary: const Color.fromARGB(
+                                          255, 191, 194, 196),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20),
+
+                                        //alignment: Alignment.center)),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                ButtonTheme(
-                                  child: Center(
-                                    child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          10, 20, 10, 0),
-                                      child: ElevatedButton(
-                                          onPressed: () => {
-                                                if (_formkey.currentState!
-                                                    .validate())
-                                                  {
-                                                    //faz algo
-                                                  }
-                                                else
-                                                  {
-                                                    //outro
-                                                  }
-                                              },
-                                          child: const Text(
-                                            'Criar Conta',
-                                            style: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 47, 61, 66),
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.w800,
-                                            ),
-                                          ),
-                                          // ignore: prefer_const_constructors
-                                          style: TextButton.styleFrom(
-                                              backgroundColor:
-                                                  const Color.fromARGB(
-                                                      255, 198, 208, 212),
-                                              alignment: Alignment.center)),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
                           ],
                         ),

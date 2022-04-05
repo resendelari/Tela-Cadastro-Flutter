@@ -4,6 +4,7 @@ import 'package:tela/routes/app_routes.dart';
 
 class DisciplinasTile extends StatelessWidget {
   final Disciplina disciplina;
+  // ignore: use_key_in_widget_constructors
   const DisciplinasTile(this.disciplina);
 
   @override
@@ -18,10 +19,10 @@ class DisciplinasTile extends StatelessWidget {
         disciplina.nome,
         style: const TextStyle(
           color: Colors.black87,
-          fontSize: 18,
+          fontSize: 15,
         ),
       ),
-      subtitle: Text(disciplina.departamento),
+      subtitle: Text(disciplina.professor),
       trailing: SizedBox(
         width: 100,
         child: Row(

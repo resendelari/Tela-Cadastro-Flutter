@@ -8,17 +8,20 @@ const DUMMY_DISCIPLINAS = {
     nome: 'Introdução aos Algoritmos',
     departamento: 'DCC',
     codigo: 'GCC101',
+    professor: 'Nome do Professor',
   ),
   '2': Disciplina(
     id: '2',
     nome: 'Programação Orientada a Objetos',
     departamento: 'DCC',
     codigo: 'GCC101',
+    professor: 'Nome do Professor',
   ),
   '3': Disciplina(
     id: '3',
     nome: 'Estrutura de Dados',
     departamento: 'DCC',
     codigo: 'GCC101',
+    professor: 'Nome do Professor',
   ),
 };

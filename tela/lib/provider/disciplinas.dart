@@ -30,11 +30,11 @@ class Disciplinas with ChangeNotifier {
       _items.update(
         disciplina.id,
         (_) => Disciplina(
-          id: disciplina.id,
-          codigo: disciplina.codigo,
-          departamento: disciplina.departamento,
-          nome: disciplina.nome,
-        ),
+            id: disciplina.id,
+            codigo: disciplina.codigo,
+            departamento: disciplina.departamento,
+            nome: disciplina.nome,
+            professor: disciplina.professor),
       );
     } else {
       final id = Random().nextDouble().toString();
@@ -45,6 +45,7 @@ class Disciplinas with ChangeNotifier {
           nome: disciplina.nome,
           codigo: disciplina.codigo,
           departamento: disciplina.departamento,
+          professor: disciplina.professor,
         ),
       );
     }

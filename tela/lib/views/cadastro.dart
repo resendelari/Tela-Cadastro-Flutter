@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tela/routes/app_routes.dart';
-import 'disciplinas_list.dart';
 
 class Cadastro extends StatefulWidget {
   const Cadastro({Key? key}) : super(key: key);

@@ -27,12 +27,16 @@ class DisciplinasList extends StatelessWidget {
                   'Disciplinas Cadastradas',
                   style: TextStyle(
                     color: Colors.blueGrey,
-                    fontSize: 18,
+                    fontSize: 25,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(
+                      AppRoutes.DISCIPLINA_FORM,
+                    );
+                  },
                   icon: const Icon(Icons.add),
                   color: Colors.blueGrey,
                 ),

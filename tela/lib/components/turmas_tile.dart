@@ -1,11 +1,11 @@
-import 'package:tela/models/disciplinas.dart';
+import 'package:tela/models/turmas.dart';
 import 'package:flutter/material.dart';
 import 'package:tela/routes/app_routes.dart';
 
-class DisciplinasTile extends StatelessWidget {
-  final Disciplina disciplina;
+class TurmasTile extends StatelessWidget {
+  final turma;
   // ignore: use_key_in_widget_constructors
-  const DisciplinasTile(this.disciplina);
+  const TurmasTile(this.turma);
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +16,13 @@ class DisciplinasTile extends StatelessWidget {
     //     tiles: [
     return ListTile(
       title: Text(
-        disciplina.nome,
+        turma.nome,
         style: const TextStyle(
           color: Colors.black87,
           fontSize: 15,
         ),
       ),
-      subtitle: Text(disciplina.professor),
+      subtitle: Text(turma.departamento),
       trailing: SizedBox(
         width: 100,
         child: Column(
@@ -33,7 +33,7 @@ class DisciplinasTile extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).pushNamed(
                       AppRoutes.DISCIPLINA_FORM,
-                      arguments: disciplina,
+                      arguments: turma,
                     );
                   },
                   icon: const Icon(Icons.edit),
@@ -43,11 +43,6 @@ class DisciplinasTile extends StatelessWidget {
                   onPressed: () {},
                   icon: const Icon(Icons.delete),
                   color: Colors.red,
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.add_box),
-                  color: Colors.blueGrey,
                 ),
               ],
             ),

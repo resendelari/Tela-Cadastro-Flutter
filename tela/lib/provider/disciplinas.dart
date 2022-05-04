@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:tela/data/dummy_disciplinas.dart';
 import 'package:tela/models/disciplinas.dart';

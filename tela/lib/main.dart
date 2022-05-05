@@ -4,8 +4,8 @@ import 'package:tela/provider/disciplinas.dart';
 import 'package:tela/routes/app_routes.dart';
 import 'package:tela/views/cadastro.dart';
 import 'package:tela/views/disciplina_form.dart';
-//import 'package:tela/views/cadastro.dart';
 import 'package:tela/views/disciplinas_list.dart';
+import 'package:tela/views/turmas_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +27,8 @@ class MyApp extends StatelessWidget {
         routes: {
           AppRoutes.HOME: (_) => const Cadastro(),
           AppRoutes.DISCIPLINA_LIST: (_) => DisciplinasList(),
-          AppRoutes.DISCIPLINA_FORM: (_) => DisciplinaForm()
+          AppRoutes.DISCIPLINA_FORM: (_) => DisciplinaForm(),
+          AppRoutes.TURMA_LIST: (_) => TurmasList()
         },
       ),
     );

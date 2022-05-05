@@ -9,11 +9,6 @@ class DisciplinasTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //return Scaffold(
-    // return ListView(
-    //   children: ListTile.divideTiles(
-    //     context: context,
-    //     tiles: [
     return ListTile(
       title: Text(
         disciplina.nome,
@@ -29,36 +24,41 @@ class DisciplinasTile extends StatelessWidget {
           children: [
             Row(
               children: <Widget>[
-                IconButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(
-                      AppRoutes.DISCIPLINA_FORM,
-                      arguments: disciplina,
-                    );
-                  },
-                  icon: const Icon(Icons.edit),
-                  color: Colors.orange,
+                Expanded(
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(
+                        AppRoutes.DISCIPLINA_FORM,
+                        arguments: disciplina,
+                      );
+                    },
+                    icon: const Icon(Icons.edit),
+                    color: Colors.orange,
+                  ),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.delete),
-                  color: Colors.red,
+                Expanded(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.delete),
+                    color: Colors.red,
+                  ),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.add_box),
-                  color: Colors.blueGrey,
+                Expanded(
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(
+                        AppRoutes.TURMA_LIST,
+                      );
+                    },
+                    icon: const Icon(Icons.remove_red_eye_sharp),
+                    color: Colors.blueGrey,
+                  ),
                 ),
               ],
             ),
           ],
         ),
       ),
-
-      //     ),
-      //   ],
-      // ).toList(),
-      //),
     );
   }
 }

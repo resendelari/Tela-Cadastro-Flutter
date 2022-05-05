@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tela/components/turmas_tile.dart';
 import 'package:tela/provider/turmas.dart';
-import 'package:tela/routes/app_routes.dart';
 
 // ignore: use_key_in_widget_constructors
 class TurmasList extends StatelessWidget {
